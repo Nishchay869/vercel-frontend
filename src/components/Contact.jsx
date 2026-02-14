@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
-
   const contactInfo = [
     {
       icon: Phone,
@@ -42,10 +41,10 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "Youtube" },
+    { icon: Facebook, href: "#", label: "Facebook", color: "blue" },
+    { icon: Twitter, href: "#", label: "Twitter", color: "blue" },
+    { icon: Instagram, href: "#", label: "Instagram", color: "pink" },
+    { icon: Youtube, href: "#", label: "Youtube", color: "red" },
   ];
 
   return (
@@ -140,7 +139,13 @@ export default function Contact() {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-12 h-12 bg-church-light/5 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 hover:bg-gradient-gold hover:text-church-dark hover:border-transparent transition-all duration-300 group"
+                    className={`w-12 h-12 bg-church-light/5 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 transition-all duration-300 group hover:translate-y-[-4px] hover:rotate-x-12 ${
+                      social.color === "blue"
+                        ? "hover:bg-blue-600 hover:border-blue-600 hover:shadow-[0_10px_30px_rgba(37,99,235,0.5)]"
+                        : social.color === "pink"
+                          ? "hover:bg-pink-600 hover:border-pink-600 hover:shadow-[0_10px_30px_rgba(219,39,119,0.5)]"
+                          : "hover:bg-red-600 hover:border-red-600 hover:shadow-[0_10px_30px_rgba(220,38,38,0.5)]"
+                    }`}
                   >
                     <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </a>

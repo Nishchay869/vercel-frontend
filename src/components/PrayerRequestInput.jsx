@@ -164,7 +164,7 @@ export default function PrayerRequestInput() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-gold text-church-dark py-4 rounded-full font-semibold hover:scale-105 transition-transform duration-300 glow-gold flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-gold text-gold-500 py-4 rounded-full font-semibold hover:scale-105 transition-transform duration-300 glow-gold flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
@@ -173,7 +173,7 @@ export default function PrayerRequestInput() {
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
+                    <Send className="w-5 h-5 text-gold-500" />
                     Submit Prayer Request
                   </>
                 )}

@@ -177,20 +177,6 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h3 className="font-display text-2xl font-semibold text-gold-400 text-center mb-8">
-            What to Expect
-          </h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {amenities.map((amenity, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 bg-church-light/5 px-6 py-3 rounded-full border border-gold-500/20"
-              >
-                <amenity.icon className="w-5 h-5 text-gold-400" />
-                <span className="text-gold-200">{amenity.name}</span>
-              </div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
