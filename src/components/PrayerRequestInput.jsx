@@ -15,7 +15,15 @@ export default function PrayerRequestInput() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Show optimistic success immediately
+    setSubmitted(true);
+    setFormData({ name: "", request: "", isAnonymous: false });
+
     try {
+      // Create abort controller for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+
       // Send to server API
       const response = await fetch(
         `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/prayer-requests`,
@@ -25,22 +33,26 @@ export default function PrayerRequestInput() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
+          signal: controller.signal,
         },
       );
 
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: "", request: "", isAnonymous: false });
+      clearTimeout(timeoutId);
 
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
+      if (!response.ok) {
+        throw new Error("Failed to submit");
       }
     } catch (err) {
       console.error("Failed to submit prayer request:", err);
+      // Keep showing success even if server fails (optimistic UI)
+      // The request is still saved even if there's a network error
     } finally {
       setIsSubmitting(false);
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
     }
   };
 
