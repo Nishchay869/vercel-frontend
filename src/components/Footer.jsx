@@ -65,18 +65,6 @@ export default function Footer() {
               A welcoming family where everyone belongs, grows, and serves
               together in love.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-church-light/5 border border-gold-500/20 rounded-full flex items-center justify-center text-gold-400 hover:bg-gradient-gold hover:text-church-dark hover:border-transparent transition-all duration-300"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -169,7 +157,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gold-200/60 text-sm">
-              © {currentYear} The Horeb Telugu Assembly Church. All rights reserved.
+              © {currentYear} The Horeb Telugu Assembly Church. All rights
+              reserved.
             </p>
             <div className="flex items-center gap-6 text-sm">
               <a

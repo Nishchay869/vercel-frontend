@@ -34,7 +34,7 @@ export default function Contact() {
     },
     {
       icon: Clock,
-      title: "Office Hours",
+      title: "Church Hours",
       details: ["Monday - Thursday", "9:00 AM - 4:00 PM"],
       subtext: "Friday: 9:00 AM - 12:00 PM",
     },
