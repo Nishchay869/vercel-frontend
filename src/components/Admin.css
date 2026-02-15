@@ -64,7 +64,11 @@
 .admin-logo {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.2),
+    rgba(212, 175, 55, 0.05)
+  );
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 16px;
   display: flex;
@@ -299,6 +303,21 @@
 .admin-logout-btn:hover {
   background: rgba(239, 68, 68, 0.1);
   border-color: rgba(239, 68, 68, 0.3);
+}
+
+.admin-delete-all-btn {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.admin-delete-all-btn:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.admin-delete-all-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Filters */
@@ -758,4 +777,3 @@
     justify-content: center;
   }
 }
-

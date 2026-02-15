@@ -14,6 +14,7 @@ import {
   RefreshCw,
   Eye,
   EyeOff,
+  Trash,
 } from "lucide-react";
 import "./Admin.css";
 
@@ -31,6 +32,7 @@ export default function AdminDashboard() {
     isAnonymous: false,
   });
   const [deleteConfirm, setDeleteConfirm] = useState(null);
+  const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
   const navigate = useNavigate();
 
   const API_URL = `${import.meta.env.VITE_API_URL || ""}/api`;
@@ -128,6 +130,25 @@ export default function AdminDashboard() {
     }
   };
 
+  // Handle delete all requests
+  const handleDeleteAllRequests = async () => {
+    try {
+      const response = await fetch(`${API_URL}/prayer-requests`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        fetchPrayerRequests();
+        setDeleteAllConfirm(false);
+      }
+    } catch (err) {
+      console.error("Delete all error:", err);
+    }
+  };
+
   // Toggle anonymous visibility
   const toggleAnonymous = async (request) => {
     const updatedName = request.isAnonymous ? "Anonymous" : request.name;
@@ -198,6 +219,15 @@ export default function AdminDashboard() {
           </p>
         </div>
         <div className="admin-header-right">
+          <button
+            onClick={() => setDeleteAllConfirm(true)}
+            className="admin-header-btn admin-delete-all-btn"
+            title="Delete All Requests"
+            disabled={prayerRequests.length === 0}
+          >
+            <Trash size={20} />
+            Delete All
+          </button>
           <button
             onClick={fetchPrayerRequests}
             className="admin-header-btn"
@@ -442,6 +472,59 @@ export default function AdminDashboard() {
                     className="admin-modal-btn admin-modal-btn-danger"
                   >
                     Delete
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Delete All Confirmation Modal */}
+      <AnimatePresence>
+        {deleteAllConfirm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="admin-modal-overlay"
+            onClick={() => setDeleteAllConfirm(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="admin-modal admin-delete-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="admin-modal-header">
+                <h3>Confirm Delete All</h3>
+                <button
+                  onClick={() => setDeleteAllConfirm(false)}
+                  className="admin-modal-close"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="admin-modal-body">
+                <p className="admin-delete-message">
+                  Are you sure you want to delete ALL {prayerRequests.length}{" "}
+                  prayer requests? This action cannot be undone.
+                </p>
+
+                <div className="admin-modal-actions">
+                  <button
+                    onClick={() => setDeleteAllConfirm(false)}
+                    className="admin-modal-btn admin-modal-btn-secondary"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleDeleteAllRequests}
+                    className="admin-modal-btn admin-modal-btn-danger"
+                  >
+                    Delete All
                   </button>
                 </div>
               </div>
