@@ -377,7 +377,7 @@ export default function AdminDashboard() {
                       setEditForm({ ...editForm, name: e.target.value })
                     }
                     className="admin-modal-input"
-                    disabled={editForm.isAnonymous}
+                    disabled={true}
                   />
                 </div>
 
@@ -390,6 +390,7 @@ export default function AdminDashboard() {
                     }
                     className="admin-modal-textarea"
                     rows={4}
+                    disabled={true}
                   />
                 </div>
 

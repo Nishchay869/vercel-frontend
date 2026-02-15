@@ -684,7 +684,8 @@
   border-color: rgba(212, 175, 55, 0.5);
 }
 
-.admin-modal-input:disabled {
+.admin-modal-input:disabled,
+.admin-modal-textarea:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
