@@ -87,7 +87,7 @@ function AppContent() {
       <Ministries />
       <Events />
       <PrayerRequestInput />
-      {/* <Comments /> */}
+      <Comments />
       <Contact />
       <Footer />
     </>

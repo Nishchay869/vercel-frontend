@@ -26,7 +26,7 @@ export default function PrayerRequestInput() {
 
       // Send to server API
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/prayer-requests`,
+        `${import.meta.env.VITE_API_URL || ""}/api/prayer-requests`,
         {
           method: "POST",
           headers: {

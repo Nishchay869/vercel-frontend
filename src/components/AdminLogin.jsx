@@ -19,7 +19,7 @@ export default function AdminLogin({ setIsAuthenticated }) {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/login`,
+        `${import.meta.env.VITE_API_URL || ""}/api/login`,
         {
           method: "POST",
           headers: {

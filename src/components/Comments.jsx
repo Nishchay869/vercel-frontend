@@ -16,8 +16,7 @@ export default function Comments() {
   // Initialize socket connection once using useRef
   useEffect(() => {
     // Create socket connection only if it doesn't exist
-    const socketUrl =
-      import.meta.env.VITE_SOCKET_URL || "http://localhost:3001";
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || "";
     if (!socket) {
       socket = io(socketUrl, {
         transports: ["websocket", "polling"],
