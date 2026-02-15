@@ -35,6 +35,10 @@ export default function AdminLogin({ setIsAuthenticated }) {
         // Store token in localStorage
         localStorage.setItem("adminToken", data.token);
         localStorage.setItem("adminUser", JSON.stringify(data.user));
+        // Store session expiry time
+        if (data.expiresAt) {
+          localStorage.setItem("sessionExpiresAt", data.expiresAt);
+        }
         setIsAuthenticated(true);
         navigate("/admin/dashboard");
       } else {

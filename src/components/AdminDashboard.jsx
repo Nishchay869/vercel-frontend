@@ -33,6 +33,7 @@ export default function AdminDashboard() {
   });
   const [deleteConfirm, setDeleteConfirm] = useState(null);
   const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
+  const [sessionExpired, setSessionExpired] = useState(false);
   const navigate = useNavigate();
 
   const API_URL = `${import.meta.env.VITE_API_URL || ""}/api`;
@@ -72,6 +73,23 @@ export default function AdminDashboard() {
     fetchPrayerRequests();
   }, [fetchPrayerRequests]);
 
+  // Check for session expiry
+  useEffect(() => {
+    const checkSessionExpiry = () => {
+      const expiresAt = localStorage.getItem("sessionExpiresAt");
+      if (expiresAt && Date.now() > parseInt(expiresAt)) {
+        setSessionExpired(true);
+        handleLogout();
+      }
+    };
+
+    // Check every minute
+    const interval = setInterval(checkSessionExpiry, 60000);
+    checkSessionExpiry(); // Also check immediately
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Handle logout
   const handleLogout = async () => {
     try {
@@ -87,6 +105,7 @@ export default function AdminDashboard() {
 
     localStorage.removeItem("adminToken");
     localStorage.removeItem("adminUser");
+    localStorage.removeItem("sessionExpiresAt");
     navigate("/admin");
   };
 
