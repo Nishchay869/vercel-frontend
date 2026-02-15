@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Lock, User, Eye, EyeOff, LogIn } from "lucide-react";
+import { Lock, User, Eye, EyeOff, LogIn, Home } from "lucide-react";
 import "./Admin.css";
 
 export default function AdminLogin({ setIsAuthenticated }) {
@@ -140,6 +140,11 @@ export default function AdminLogin({ setIsAuthenticated }) {
               </>
             )}
           </motion.button>
+
+          <Link to="/" className="admin-home-button">
+            <Home size={18} />
+            Go to Home
+          </Link>
         </form>
 
         <div className="admin-login-footer">
