@@ -83,9 +83,9 @@ export default function PrayerRequestInput() {
           </div>
           <p className="text-xl text-gold-200">
             "Cast all your anxiety on Him because He cares for you."
-            <span className="block mt-2 text-lg text-gold-400/70">
+            {/* <span className="block mt-2 text-lg text-gold-400/70">
               - 1 Peter 5:7
-            </span>
+            </span> */}
           </p>
         </motion.div>
 

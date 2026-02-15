@@ -153,8 +153,8 @@ export default function Services() {
             <div className="flex items-center gap-3">
               <Clock className="w-8 h-8 text-gold-400" />
               <div>
-                <p className="text-gold-300 font-semibold">Sunday Services</p>
-                <p className="text-gold-200">8:00 AM & 10:30 AM</p>
+                <p className="text-gold-300 font-semibold">Sunday Prayer</p>
+                <p className="text-gold-200">10:00 AM & 12:30 AM</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-12 bg-gold-500/30"></div>
@@ -163,7 +163,7 @@ export default function Services() {
               <div>
                 <p className="text-gold-300 font-semibold">Location</p>
                 <p className="text-gold-200">
-                  123 Grace Street, Cityville, ST 12345
+                  Hassan district Belur taluk hebbalu post office and village
                 </p>
               </div>
             </div>

@@ -54,7 +54,7 @@ export default function Footer() {
               <Cross className="w-10 h-10 text-gold-500 cross-animation" />
               <div>
                 <h3 className="font-display text-xl font-semibold text-gold-400">
-                  The Horeb Telugu Assembly Church
+                   The Horeb Prayer Hall
                 </h3>
                 <p className="text-gold-200/60 text-sm mt-3">
                   "Where Faith Meets Family"
@@ -134,18 +134,16 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-gold-200/70">
                 <MapPin className="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" />
                 <span>
-                  123 Grace Street
-                  <br />
-                  Cityville, ST 12345
+                   Hassan district Belur taluk hebbalu post office and village
                 </span>
               </li>
               <li className="flex items-center gap-3 text-gold-200/70">
                 <Phone className="w-5 h-5 text-gold-500 flex-shrink-0" />
-                <span>(555) 123-4567</span>
+                <span>6361718992</span>
               </li>
               <li className="flex items-center gap-3 text-gold-200/70">
                 <Mail className="w-5 h-5 text-gold-500 flex-shrink-0" />
-                <span>info@gracecommunity.church</span>
+                <span>ravikumarsamyak2005@gmail.com</span>
               </li>
             </ul>
           </motion.div>
@@ -157,7 +155,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gold-200/60 text-sm">
-              © {currentYear} The Horeb Telugu Assembly Church. All rights
+              © {currentYear}  The Horeb Prayer Hall. All rights
               reserved.
             </p>
             <div className="flex items-center gap-6 text-sm">

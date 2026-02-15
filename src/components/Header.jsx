@@ -100,7 +100,7 @@ export default function Header() {
             <div className="flex items-center space-x-3 flex-shrink-0">
               <Cross className="w-8 h-8 text-gold-500 cross-animation" />
               <span className="font-display text-xl font-semibold text-gold-400">
-                The Horeb Telugu Assembly Church
+                The Horeb Prayer Hall
               </span>
             </div>
 

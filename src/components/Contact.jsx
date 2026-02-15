@@ -17,26 +17,32 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["(555) 123-4567", "(555) 987-6543"],
+      details: ["6361718992"],
       subtext: "Mon-Fri: 9AM - 5PM",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@gracecommunity.church", "office@gracecommunity.church"],
+      details: ["ravikumarsamyak2005@gmail.com"],
       subtext: "We respond within 24 hours",
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Grace Street", "Cityville, ST 12345"],
-      subtext: "Plenty of parking available",
+      details: ["Hassan district Belur taluk hebbalu post office and village"],
+      // subtext: "Plenty of parking available",
     },
     {
       icon: Clock,
       title: "Church Hours",
       details: ["Monday - Thursday", "9:00 AM - 4:00 PM"],
-      subtext: "Friday: 9:00 AM - 12:00 PM",
+      subtext: "Sunday: 10:00 AM - 12:30 PM",
+    },
+    {
+      icon: Mail,
+      title: "Father",
+      details: ["Shivu Samuel"],
+      subtext: "Pastor",
     },
   ];
 
@@ -118,7 +124,7 @@ export default function Contact() {
                 <div className="relative z-10 text-center">
                   <p className="text-gold-300 font-semibold mb-2">Visit Us</p>
                   <p className="text-gold-200/70">
-                    123 Grace Street, Cityville, ST 12345
+                    Hassan district Belur taluk hebbalu post office and village
                   </p>
                   <button className="mt-4 text-gold-400 hover:text-gold-300 font-semibold flex items-center gap-2 mx-auto">
                     Get Directions
@@ -129,7 +135,7 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="text-center">
+            {/* <div className="text-center">
               <h4 className="font-display text-xl font-semibold text-gold-400 mb-4">
                 Connect With Us
               </h4>
@@ -151,7 +157,7 @@ export default function Contact() {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

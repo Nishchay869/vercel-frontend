@@ -54,7 +54,7 @@ export default function Hero3D() {
         </div>
 
         <h1 className="hero-title">
-          The Horeb Telugu Assembly <span class="text-gold-200">Church</span>
+          The Horeb Prayer <span class="text-gold-200">Hall</span>
         </h1>
 
         <p className="hero-subtitle">"Where Faith Meets Family"</p>
@@ -69,8 +69,8 @@ export default function Hero3D() {
         <div className="service-times">
           <div className="time-card">
             <span className="time-icon">⛪</span>
-            <span className="time-label">Sunday Service</span>
-            <span className="time-value">9:00 AM & 11:00 AM</span>
+            <span className="time-label">Sunday Prayer</span>
+            <span className="time-value">10:00 AM & 12:30 AM</span>
           </div>
           <div className="time-card">
             <span className="time-icon">📖</span>
